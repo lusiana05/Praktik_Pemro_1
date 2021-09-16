@@ -1,0 +1,36 @@
+namaLengkap = "Lusiana Ilmanastri Oktiviasusanti";
+namaPanggilan = "Lusiana";
+tempatLahir = "Yogyakarta";
+asal = "Jakarta";
+nim = "1215375144021";
+prodi = "S-1 Teknologi Informasi";
+ipkHarapan = 3.85;
+riwayatPendidikan1 = "SDN Rorotan 05 Pagi";
+riwayatPendidikan2 = "SMPN 256 Jakarta";
+riwayatPendidikan3 = "SMAN 89 Jakarta";
+Tahun1 = 2014
+Tahun2 = 2017;
+Tahun3 = 2020;
+citaCita= "Software engineer";
+hobi = "Menonton acara TV seputar teknologi dan sains";
+motto = "Jadikanlah orang tuamu raja, maka rezekimu akan seperti raja";
+
+print("------------------------------------------------------");
+print("           Identitas Mahasiswa Baru UNY 2021          ");
+print("------------------------------------------------------");
+print("Nama lengkap            : " + namaLengkap);
+print("Nama panggilan          : " + namaPanggilan);
+print("Tempat lahir            : " + tempatLahir);
+print("Tempat tinggal asal     : " + asal);
+print("NIM                     : " + nim);
+print("Prodi                   : " + prodi);
+print("IPK Harapan             : " + ipkHarapan);
+print("Riwayat pendidikan      : " + riwayatPendidikan1);
+print("Lulus                   : " + Tahun1);
+print("                        : " + riwayatPendidikan2);
+print("Lulus                   : " + Tahun2);
+print("                        : " + riwayatPendidikan3);
+print("Lulus                   : " + Tahun3);
+print("Cita-cita               : " + citaCita);
+print("Hobi                    : " + hobi);
+print("Motto                   : " + motto);
