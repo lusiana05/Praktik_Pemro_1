@@ -1,0 +1,12 @@
+a = input("Masukan nilai a = ")
+b = input("Masukan nilai b = ")
+print("A == B = " + str(a==b))
+print("A != B = " + str(a!=b)) 
+print("A > B = " + str(a>b))
+print("A < B = " + str(a<b))
+print("A >= B = " + str(a>=b))
+print("A <= B = " + str(a<=b))
+x = int(a) < 10 and int(b) > 7
+print("hasil A < 10 and B > 7 = " + str(x))
+print("A < 10 and B > 7 = " + str(int(a) < 10 or int(b) > 7))
+print("A < 10 and B > 7 = " + str(not(int(a) < 7)))
