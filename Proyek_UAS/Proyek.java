@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Proyek {
@@ -125,44 +124,116 @@ public class Proyek {
             System.out.println("Data yang akan Anda hapus tidak ditemukan: ");
         } 
         else {
+            System.out.println("Anda yakin ingin menghapus?"); 
+            System.out.println("Jika iya, masukkan angka 1");
+            System.out.println("Jika tidak, masukkan angka 0");
+
             for (int i=index; i<jumlahData; i++) {
-                mahasiswa[i] = mahasiswa[i+1];
+                int konfirmasi = scan.nextInt();
+                if (konfirmasi==1) {
+                    mahasiswa[i] = mahasiswa[i+1];
+                    jumlahData--;
+                    System.out.println("Data berhasil terhapus");
+                    lihatData();
+                } else if (konfirmasi==0) {
+                    System.out.println("Data tidak terhapus");
+                    lihatData();
+                }
             }
-            jumlahData--;
-            lihatData();
         }
     }
-
-   public void editData() {
+//step 1: select data pake NIM
+//step 2: cek kondisi ada/tidak
+//step 3: saat data ada, pilih edit apa
+//step 4: buat method pilih edit apa
+//step 5: dalam pilih edit apa, gunakan while
+    public void editData() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Masukkan NIM mahasiswa yang akan Anda edit");
-        String nim = scan.nextLine();
-        int index = getIndexByNIM(nim);
-        if (index==-1) {
+        System.out.println("Pilih data yang akan diedit menggunakan NIM:");
+        String selectNIM = scan.nextLine();
+        int indexNim = getIndexByNIM(selectNIM);
+
+        if (indexNim==-1) {
             System.out.println("Nama yang Anda akan edit tidak ditemukan");
         } else {
-            mahasiswa[index].getDetail();
-            System.out.print("Masukan Nama mahasiswa yang baru = ");
-            String Nama = scan.nextLine();
-            mahasiswa[index].setNama(Nama);
-            System.out.print("Masukan NIM mahasiswa yang baru = ");
-            String nimString = scan.nextLine();
-            mahasiswa[index].setNIM(nim);
-            System.out.print("Masukan alamat mahasiswa yang baru = ");
-            String alamat = scan.nextLine();
-            mahasiswa[index].setAlamat(alamat);
-            System.out.print("Masukan IPK mahasiswa yang baru = ");
-            double IPK = scan.nextDouble();
-            mahasiswa[index].setIPK(IPK);
-            System.out.print("Masukan tinggi badan mahasiswa yang baru = ");
-            double tinggiBadan = scan.nextDouble();
-            mahasiswa[index].setTinggiBadan(tinggiBadan);
-            System.out.print("Masukan semester mahasiswa yang baru = ");
-            int semester = scan.nextInt();
-            mahasiswa[index].setSemester(semester);
-            mahasiswa[index].getDetail();
+            System.out.println("Data ter-select");
+            mahasiswa[indexNim].getDetail();
+            System.out.println("Pilih data apa yang akan Anda edit:");
+            System.out.println("1. Nama");
+            System.out.println("2. NIM");
+            System.out.println("3. Alamat");
+            System.out.println("4. IPK");
+            System.out.println("5. Tinggi badan");
+            System.out.println("6. Semester");
+            int menuEdit = scan.nextInt();
 
-        }
-    
+            if (menuEdit==1) {
+                editNama(indexNim);
+            } else if (menuEdit==2) {
+                editNIM(indexNim);
+            } else if (menuEdit==3) {
+                editAlamat(indexNim);
+            } else if (menuEdit==4) {
+                editIPK(indexNim);
+            } else if (menuEdit==5) {
+                editTinggiBadan(indexNim);
+            } else if (menuEdit==6) {
+                editSemester(indexNim);
+            }   
+        }    
     }
-}    
+
+    public void editNama(int index) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukan Nama mahasiswa yang baru = ");
+        String Nama = scan.nextLine();
+        mahasiswa[index].setNama(Nama);
+        System.out.println("Data nama berhasil diedit");
+        mahasiswa[index].getDetail();
+    }  
+
+    public void editNIM(int index) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukan NIM mahasiswa yang baru = ");
+        String nim = scan.nextLine();
+        mahasiswa[index].setNIM(nim);
+        System.out.println("Data NIM berhasil diedit");
+        mahasiswa[index].getDetail();
+    }
+
+    public void editAlamat(int index) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukan alamat mahasiswa yang baru = ");
+        String alamat = scan.nextLine();
+        mahasiswa[index].setAlamat(alamat);
+        System.out.println("Data alamat berhasil diedit");
+        mahasiswa[index].getDetail();
+    }
+
+    public void editIPK(int index) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukan IPK mahasiswa yang baru = ");
+        double ipk = scan.nextDouble();
+        mahasiswa[index].setIPK(ipk);
+        System.out.println("Data IPK berhasil diedit");
+        mahasiswa[index].getDetail();
+    }
+
+    public void editTinggiBadan(int index) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukan tinggi badan mahasiswa yang baru = ");
+        double tinggiBadan = scan.nextDouble();
+        mahasiswa[index].setTinggiBadan(tinggiBadan);
+        System.out.println("Data tinggi badan berhasil diedit");
+        mahasiswa[index].getDetail();
+    }
+
+    public void editSemester(int index) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukan semester mahasiswa yang baru = ");
+        int semester = scan.nextInt();
+        mahasiswa[index].setSemester(semester);
+        System.out.println("Data semester berhasil diedit");
+        mahasiswa[index].getDetail();
+    }
+}
