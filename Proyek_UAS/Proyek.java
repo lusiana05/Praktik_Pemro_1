@@ -14,7 +14,7 @@ public class Proyek {
             } else if (menu==2) {
                 siakad.tambahData();
             } else if (menu==3) {
-                siakad.cariDataByNIM();
+                siakad.cariData();
             } else if (menu==4) {
                 siakad.rerataIPK();
             } else if (menu==5) {
@@ -84,6 +84,18 @@ public class Proyek {
         int index = getIndexByNIM(nim);
         if (index==-1) {
             System.out.println("NIM yang Anda cari tidak ditemukan");
+        } else {
+            mahasiswa[index].getDetail();
+        }
+    }
+
+    public void cariDataByNama() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Masukkan nama mahasiswa yang akan Anda cari: ");
+        String nama = scan.nextLine();
+        int index = getIndexByNama(nama);
+        if (index==-1) {
+            System.out.println("Nama yang Anda cari tidak ditemukan");
         } else {
             mahasiswa[index].getDetail();
         }
@@ -183,6 +195,19 @@ public class Proyek {
         }    
     }
 
+    public void cariData() {
+        System.out.println("Cari data dengan:");
+        System.out.println("1. Nama");
+        System.out.println("2. NIM");
+        Scanner scan = new Scanner(System.in);
+        int menuCari = scan.nextInt();
+        if (menuCari==1) {
+            cariDataByNama();
+        } else if (menuCari==2) {
+            cariDataByNIM();
+        }
+    }
+    
     public void editNama(int index) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Masukan Nama mahasiswa yang baru = ");
