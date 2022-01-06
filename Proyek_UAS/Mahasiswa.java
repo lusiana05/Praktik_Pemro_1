@@ -65,19 +65,24 @@ public class Mahasiswa extends Manusia {
             System.out.println();
         }
         else if (ipk >= 3.01 && ipk < 3.51) {
-            System.out.println(this.nim+" "+this.nama+" "+this.alamat+" "+this.ipk+ "(Sangat memuaskan)" +" "+this.tinggiBadan+" "+this.semester);
+            System.out.printf("%5s %8s %8s %5s %7s %5s", this.nim, this.nama.toUpperCase(), this.alamat, this.ipk, "(Sangat memuaskan)", this.tinggiBadan, this.semester);
+            System.out.println();
         }
         else if (ipk >= 2.76 && ipk < 3.01) {
-            System.out.println(this.nim+" "+this.nama+" "+this.alamat+" "+this.ipk+ "(Memuaskan)" +" "+this.tinggiBadan+" "+this.semester);
+            System.out.printf("%5s %8s %8s %5s %7s %5s", this.nim, this.nama.toUpperCase(), this.alamat, this.ipk, "(Memuaskan)", this.tinggiBadan, this.semester);
+            System.out.println();
         }
         else if (ipk >= 2.00 && ipk < 2.76) {
-            System.out.println(this.nim+" "+this.nama+" "+this.alamat+" "+this.ipk+ "(Cukup)" +" "+this.tinggiBadan+" "+this.semester);
+            System.out.printf("%5s %8s %8s %5s %7s %5s", this.nim, this.nama.toUpperCase(), this.alamat, this.ipk, "(Cukup)", this.tinggiBadan, this.semester);
+            System.out.println();
         }
         else if (ipk < 2.00) {
-            System.out.println(this.nim+" "+this.nama+" "+this.alamat+" "+this.ipk+ "(Tidak Lulus)" +" "+this.tinggiBadan+" "+this.semester);
+            System.out.printf("%5s %8s %8s %5s %7s %5s", this.nim, this.nama.toUpperCase(), this.alamat, this.ipk, "(Tidak Lulus)", this.tinggiBadan, this.semester);
+            System.out.println();
         }
         else {
-            System.out.println(this.nim+" "+this.nama+" "+this.alamat+" "+this.ipk+ "(Tidak valid)" +" "+this.tinggiBadan+" "+this.semester);
+            System.out.printf("%5s %8s %8s %5s %7s %5s", this.nim, this.nama.toUpperCase(), this.alamat, this.ipk, "(Tidak Valid)", this.tinggiBadan, this.semester);
+            System.out.println();
         }
     }
 
