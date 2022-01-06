@@ -56,11 +56,13 @@ public class Mahasiswa extends Manusia {
     }
     
     public void getDetail() {
-        if (ipk >= 3.51 && ipk <= 4.00) {
-            System.out.println(this.nim+" "+this.nama+" "+this.alamat+" "+this.ipk+ "(Summa cumlaude)" +" "+this.tinggiBadan+" "+this.semester);
+        if (ipk >= 3.51 && ipk <= 4.00) {   
+            System.out.printf("%5s %8s %8s %5s %7s %5s", this.nim, this.nama.toUpperCase(), this.alamat, this.ipk, "(Summa cumlaude)", this.tinggiBadan, this.semester);
+            System.out.println();
         }
         else if (ipk >= 3.51 && ipk < 4.00) {
-            System.out.println(this.nim+" "+this.nama+" "+this.alamat+" "+this.ipk+ "(Cumlaude)" +" "+this.tinggiBadan+" "+this.semester);
+            System.out.printf("%5s %8s %8s %5s %7s %5s", this.nim, this.nama.toUpperCase(), this.alamat, this.ipk, "(Cumlaude)", this.tinggiBadan, this.semester);
+            System.out.println();
         }
         else if (ipk >= 3.01 && ipk < 3.51) {
             System.out.println(this.nim+" "+this.nama+" "+this.alamat+" "+this.ipk+ "(Sangat memuaskan)" +" "+this.tinggiBadan+" "+this.semester);
