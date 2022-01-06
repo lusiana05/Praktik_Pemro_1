@@ -66,23 +66,27 @@ public class Proyek {
         String alamat = scan.nextLine();
         double ipk = 0;
         double tinggi = 0;
-        try {
-            System.out.print("Masukan IPK mahasiswa = ");
-            ipk = scan.nextDouble();
-            System.out.print("Masukan Tinggi Badan mahasiswa = ");
-            tinggi = scan.nextDouble();
-        } catch (Exception e) {
-            System.out.println("Anda harus memasukan bilangan desimal dengan menggunakan tanda titik. Silahkan edit IPK atau tinggi anda setelah input data");
+        System.out.print("Masukan Tinggi Badan mahasiswa = ");
+        tinggi = scan.nextDouble();
+        System.out.print("Masukan IPK mahasiswa = ");
+        ipk = scan.nextDouble();
+        if (ipk < 0){
+            System.out.print("Nilai IPK harus sama atau di atas 0.0");
         }
-        System.out.print("Masukan semester mahasiswa = ");
-        int semester = scan.nextInt();
-        Mahasiswa inputMahasiswa = new Mahasiswa(nim, nama, alamat, ipk, semester);
-        inputMahasiswa.setTinggiBadan(tinggi);
-        mahasiswa[jumlahData] = inputMahasiswa;
-        jumlahData++;
+        else if (ipk > 4){
+            System.out.print("Nilai IPK harus sama atau di bawah 4.0");
+        }
+        else{
+            System.out.print("Masukan semester mahasiswa = ");
+            int semester = scan.nextInt();
+            Mahasiswa inputMahasiswa = new Mahasiswa(nim, nama, alamat, ipk, semester);
+            inputMahasiswa.setTinggiBadan(tinggi);
+            mahasiswa[jumlahData] = inputMahasiswa;
+            jumlahData++;
+        }
         lihatData();
     }
-
+            
     public void cariDataByNIM() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Masukkan NIM mahasiswa yang akan dicari = ");
